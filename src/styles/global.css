@@ -1,0 +1,49 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+
+/* T&C and Privacy Policy*/
+.legal-section h1 {
+  @apply text-4xl font-bold;
+}
+
+.legal-section h2 {
+  @apply inline-block my-4 text-2xl font-bold;
+}
+
+.topic {
+  @apply  mt-8 text-3xl !important;
+}
+
+.legal-section p {
+  @apply my-4 text-lg;
+}
+
+.legal-section ol {
+  list-style-type: decimal;
+  list-style-position:inside;
+  margin: 0 0 60px 0;
+  padding:0; 
+}
+
+.legal-section ol > li::marker { 
+  /* for numbers */
+  @apply text-2xl font-bold;              
+}
+
+.legal-section ul {
+  list-style-type: disc;
+}
+
+.legal-section ul > li{    
+  @apply ml-10 text-lg;       
+}
+
+.graphics {
+  width: 600px;
+  height: 300px;
+}
