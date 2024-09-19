@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Background } from '../background/Background';
-import { HeroTwoButton } from '../hero/HeroTwoButton';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
@@ -10,9 +9,8 @@ import { Logo } from './Logo';
 const Hero = () => (
   <Background>
     <div className="relative overflow-hidden">
-      {/* Subtle right-side glow effect */}
-      <div className="absolute inset-0 bg-black">
-        <div className="absolute -right-1/4 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-purple-900 opacity-10 blur-[100px]"></div>
+      <div className="absolute inset-0">
+        <div className="absolute right-0 top-1/2 h-[600px] w-[600px] -translate-y-1/2 rounded-full bg-purple-600 opacity-20 blur-[100px]"></div>
       </div>
       
       {/* Content */}
@@ -21,7 +19,7 @@ const Hero = () => (
           <NavbarTwoColumns logo={<Logo xl />}>
             <li>
               <Link
-                href="https://play.google.com/store/apps/details?id=com.pomoroom.pomoroom"
+                href="https://play.google.com/store/apps/details?id=com.tinytoollabs.chatai"
                 className="text-white"
               >
                 Download now
@@ -31,46 +29,60 @@ const Hero = () => (
         </Section>
 
         <Section yPadding="pt-20 pb-32">
-          <HeroTwoButton
-            title={
-              <>
-                {'Intelligent Chat AI\n'}
-                <span className="text-gray-300">Your AI companion</span>
-              </>
-            }
-            description="All advanced AI features in one place. Take your productivity to next level!"
-            buttonOne={
-              <Link
-                href="https://play.google.com/store/apps/details?id=com.tinytoollabs.chatai"
-                className="flex items-center justify-center"
-              >
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            {/* Left side: Text content */}
+            <div className="w-full md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-8">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+                Intelli Chat AI
+                <span className="block text-3xl md:text-4xl text-gray-300 mt-2">Your AI companion</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-200 mb-10">
+                All advanced AI features in one place. Take your productivity to next level!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="https://play.google.com/store/apps/details?id=com.tinytoollabs.chatai"
+                  className="flex items-center justify-center w-[200px] h-[60px]"
+                >
+                  <Image
+                    src="/assets/images/google_playstore.png"
+                    alt="Google Play Badge"
+                    width={200}
+                    height={60}
+                    className="h-full w-full object-contain"
+                  />
+                </Link>
+                <Link
+                  href="#"
+                  className="flex w-[200px] h-[60px] items-center justify-center rounded-lg border-2 border-[#9D9D9D] bg-black px-4"
+                >
+                  <Image
+                    src="/Apple_logo_white.png"
+                    alt="Apple Logo"
+                    width={18}
+                    height={18}
+                    className="h-4 w-4"
+                  />
+                  <span className="ml-3 text-base font-bold text-white">
+                    Coming Soon
+                  </span>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Right side: Image */}
+            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+              <div className="w-[100%] max-w-[800px]">
                 <Image
-                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                  alt="Google Play Badge"
-                  width={240}
-                  height={90}
-                  className="h-auto w-60"
+                  src="/assets/images/hero_image.png"
+                  alt="App Screenshot"
+                  width={800}
+                  height={800}
+                  className="rounded-lg shadow-lg w-full h-auto"
                 />
-              </Link>
-            }
-            buttonTwo={
-              <Link
-                href="#"
-                className="flex max-w-[240px] items-center justify-center rounded-lg border-2 border-[#9D9D9D] bg-black px-6 py-4"
-              >
-                <Image
-                  src="/Apple_logo_white.png"
-                  alt="Apple Logo"
-                  width={20}
-                  height={20}
-                  className="h-auto w-auto"
-                />
-                <span className="ml-4 text-lg font-bold text-white">
-                  Coming Soon
-                </span>
-              </Link>
-            }
-          />
+              </div>
+            </div>
+          </div>
         </Section>
       </div>
     </div>

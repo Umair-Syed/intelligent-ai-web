@@ -1,13 +1,13 @@
 export default function PrivacyPolicy() {
   return (
     <section className="legal-section mt-4 px-24 pb-10 pt-4">
-      <h2>Intelligent Chat AI</h2>
+      <h2>Intelli Chat AI</h2>
       <h1>Privacy Policy</h1>
       <p>Last updated: September 7, 2024</p>
 
       <h2 className="topic">1. Introduction</h2>
       <p>
-        Welcome to Intelligent Chat AI (“we,“ “our,“ or “us“). This Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your personal information when you use our mobile application and related services (collectively, the “Service“).
+        Welcome to Intelli Chat AI (“we,“ “our,“ or “us“). This Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your personal information when you use our mobile application and related services (collectively, the “Service“).
       </p>
 
       <h2 className="topic">2. Information We Collect</h2>

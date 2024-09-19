@@ -1,7 +1,7 @@
 export default function Terms() {
   return (
     <section className="legal-section mt-4 px-24 pb-10 pt-4">
-      <h2>Intelligent Chat AI</h2>
+      <h2>Intelli Chat AI</h2>
       <h1>Terms of Service</h1>
       <p>Last updated: September 7, 2024</p>
 
@@ -9,14 +9,14 @@ export default function Terms() {
         <li>
           <h2>Acceptance of Terms</h2>
           <p>
-            By accessing or using Intelligent Chat AI (the “Service“), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Service.
+            By accessing or using Intelli Chat AI (the “Service“), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Service.
           </p>
         </li>
 
         <li>
           <h2>Description of Service</h2>
           <p>
-            Intelligent Chat AI is a Flutter-based chat AI application that provides features such as AI text chat, image generation, text-to-speech, computer vision, and the ability to share AI-generated content within the app.
+            Intelli Chat AI is a Flutter-based chat AI application that provides features such as AI text chat, image generation, text-to-speech, computer vision, and the ability to share AI-generated content within the app.
           </p>
         </li>
 

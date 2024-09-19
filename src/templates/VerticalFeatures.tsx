@@ -7,7 +7,7 @@ const VerticalFeatures = () => (
     description="Stop wasting time on what AI can do better. You focus on what you do best."
   >
     <VerticalFeatureRow
-      title="Minilistic Advanced AI"
+      title="Minimalistic Advanced AI"
       description="You ask your question and get the answer from the the most advanced AI out there."
       image="/assets/images/1.png"
       imageAlt="AI Chat"
