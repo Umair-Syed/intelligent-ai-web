@@ -15,6 +15,14 @@
   @apply inline-block my-4 text-2xl font-bold;
 }
 
+.legal-section h3 {
+  @apply my-4 text-xl font-bold;
+}
+
+.legal-section h4 {
+  @apply my-4 text-lg font-bold;
+}
+
 .topic {
   @apply  mt-8 text-3xl !important;
 }
