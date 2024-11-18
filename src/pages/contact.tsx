@@ -4,7 +4,7 @@ import { Background } from '../background/Background';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from '../templates/Logo';
-import { FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaSquareXTwitter, FaLocationDot } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 
 export default function Contact() {
@@ -79,6 +79,19 @@ export default function Contact() {
                   >
                     LinkedIn Profile
                   </Link>
+                </div>
+              </div>
+              {/* Add Postal address */}
+              <div className="flex items-center space-x-4">
+                <FaLocationDot className="w-6 h-6 text-purple-400" />
+                <div>
+                  <h2 className="text-xl font-semibold">Postal Address</h2>
+                  <p className="text-gray-500">
+                  Syed Umair Andrabi<br/>
+                     180, Bagh-i-Mehtab, Srinagar<br/>
+                     Jammu and Kashmir, India 190019<br/>
+                     syedumairandrabi66@gmail.com
+                  </p>
                 </div>
               </div>
             </div>
