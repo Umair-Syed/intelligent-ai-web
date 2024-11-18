@@ -25,6 +25,14 @@ const Hero = () => (
                 Download now
               </Link>
             </li>
+            <li className="ml-4">
+              <Link
+                href="/contact"
+                className="text-white"
+              >
+                Contact us
+              </Link>
+            </li>
           </NavbarTwoColumns>
         </Section>
 
