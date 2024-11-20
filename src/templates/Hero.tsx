@@ -61,19 +61,16 @@ const Hero = () => (
                   />
                 </Link>
                 <Link
-                  href="#"
-                  className="flex w-[200px] h-[60px] items-center justify-center rounded-lg border-2 border-[#9D9D9D] bg-black px-4"
+                  href="https://apps.apple.com/in/app/ai-chat-bot-intelli-ai-chat/id6670697841"
+                  className="flex items-center justify-center w-[200px] h-[60px]"
                 >
                   <Image
-                    src="/Apple_logo_white.png"
+                    src="/assets/images/app_store_download.svg"
                     alt="Apple Logo"
-                    width={18}
-                    height={18}
-                    className="h-4 w-4"
+                    width={200}
+                    height={60}
+                    className="h-full w-full object-contain"
                   />
-                  <span className="ml-3 text-base font-bold text-white">
-                    Coming Soon
-                  </span>
                 </Link>
               </div>
             </div>
