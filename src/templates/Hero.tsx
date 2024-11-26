@@ -61,7 +61,7 @@ const Hero = () => (
                   />
                 </Link>
                 <Link
-                  href="https://apps.apple.com/in/app/ai-chat-bot-intelli-ai-chat/id6670697841"
+                  href="https://apps.apple.com/in/app/ai-chat-bot-intelli-ai-chat/id6670697841?platform=iphone"
                   className="flex items-center justify-center w-[200px] h-[60px]"
                 >
                   <Image
