@@ -79,7 +79,7 @@ const Hero = () => (
             <div className="w-full md:w-1/2 flex justify-center md:justify-end">
               <div className="w-[100%] max-w-[800px]">
                 <Image
-                  src="/assets/images/hero_image.png"
+                  src="/assets/images/hero_image_new.png"
                   alt="App Screenshot"
                   width={800}
                   height={800}
