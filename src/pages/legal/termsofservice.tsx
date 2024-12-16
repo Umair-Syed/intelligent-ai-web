@@ -1,6 +1,6 @@
 export default function Terms() {
   return (
-    <section className="legal-section mt-4 px-24 pb-10 pt-4">
+    <section className="legal-section mt-4 px-4 md:px-8 lg:px-24 pb-10 pt-4">
       <h2>Intelli Chat AI</h2>
       <h1>Terms of Service</h1>
       <p>Last updated: September 7, 2024</p>
@@ -71,12 +71,39 @@ export default function Terms() {
         </li>
 
         <li>
-          <h2>Third-Party Services</h2>
+          <h2>Subscription Terms</h2>
           <p>
-            7.1. The Service uses third-party APIs and services, including OpenAI, Anthropic, Google Gemini, Firebase, and Mixpanel. Your use of these services is subject to their respective terms of service and privacy policies.
+            7.1. Full access includes 1000 credits which reset daily.
           </p>
           <p>
-            7.2. We are not responsible for the content or practices of these third-party services.
+            7.2. The discount on annual and monthly plans is calculated based on the weekly plan.
+          </p>
+          <p>
+            7.3. Your account will be charged according to your plan for renewal within 24 hours prior to the end of the current period.
+          </p>
+          <p>
+            7.4. You can manage or turn off auto-renew in your device&apos;s app store settings. Note that uninstalling the app will not cancel your subscription.
+          </p>
+          <p>
+            7.5. Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.
+          </p>
+          <p>
+            7.6. To cancel your subscription:
+            <p>1. Open your device&apos;s app store</p>
+            <p>2. Ensure you&apos;re signed into the correct account</p>
+            <p>3. Navigate to Subscriptions in your account settings</p>
+            <p>4. Select this subscription</p>
+            <p>5. Tap Cancel subscription</p>
+          </p>
+        </li>
+
+        <li>
+          <h2>Third-Party Services</h2>
+          <p>
+            8.1. The Service uses third-party APIs and services, including OpenAI, Anthropic, Google Gemini, Firebase, and Mixpanel. Your use of these services is subject to their respective terms of service and privacy policies.
+          </p>
+          <p>
+            8.2. We are not responsible for the content or practices of these third-party services.
           </p>
         </li>
 
