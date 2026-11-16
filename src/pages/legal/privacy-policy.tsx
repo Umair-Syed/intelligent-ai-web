@@ -1,237 +1,161 @@
+import Link from 'next/link';
+
+// Trader details must match the Google Play developer account and the Terms.
+const OPERATOR_NAME = 'Syed Umair Andrabi';
+const OPERATOR_LOCATION = 'Bagh-e-Mehtab, Srinagar 190019, India';
+const CONTACT_EMAIL = 'syedumairandrabi66+chatai@gmail.com';
+const ALT_CONTACT_EMAIL = 'umair@ryzeapps.com';
+
+const Email = () => <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>;
+
 export default function PrivacyPolicy() {
   return (
-    <section className="legal-section mt-4 px-24 pb-10 pt-4">
+    <section className="legal-section mt-4 px-4 md:px-8 lg:px-24 pb-10 pt-4">
       <h2>Intelli Chat AI</h2>
       <h1>Privacy Policy</h1>
-      <p>Last updated: September 7, 2024</p>
+      <p>Last updated: November 16, 2026</p>
 
       <h2 className="topic">1. Introduction</h2>
       <p>
-        Welcome to Intelli Chat AI (“we,“ “our,“ or “us“). This Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your personal information when you use our mobile application and related services (collectively, the “Service“).
+        This Privacy Policy explains how {OPERATOR_NAME} (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) collects, uses and shares information when you use the Intelli Chat AI mobile app and related services (the &ldquo;Service&rdquo;). It should be read together with our <Link href="/legal/termsofservice/">Terms of Service</Link>.
       </p>
 
       <h2 className="topic">2. Information We Collect</h2>
-      <h3>2.1 Information You Provide</h3>
+      <h3>2.1 Information you give us</h3>
       <ul>
-        <li>Account information: When you create an account, we collect your email address and password.</li>
-        <li>User-generated content: This includes text messages, images, and audio files you create or upload while using the Services. Camera is used for capturing images for Vision AI.</li>
-        <li>Profile information: If you choose to add an avatar or other profile details, we collect and store this information.</li>
+        <li>Account information: your email address and name when you sign up with email and password, Google or Apple. If you use email and password, the password is handled by Firebase Authentication and we never see it.</li>
+        <li>Profile information: a nickname or profile picture, if you add one.</li>
+        <li>Prompts and chats: the messages you send and the responses you receive.</li>
+        <li>Photos and images: images you take with the camera or pick from your gallery to ask questions about them, and images you generate.</li>
+        <li>Documents: PDF, Word and Excel files you choose to chat with.</li>
+        <li>Voice: speech you dictate using voice input.</li>
+        <li>Saved responses: responses and images you choose to save.</li>
+        <li>Feedback and support: ratings, feedback and emails you send us, including Share &amp; Earn claims. These include your email address and account ID.</li>
       </ul>
 
-      <h3>2.2 Information Collected Automatically</h3>
+      <h3>2.2 Information collected automatically</h3>
       <ul>
-        <li>Usage data: We collect information about how you interact with our Service, including the features you use, the time and duration of your sessions, and your device information.</li>
-        <li>Analytics data: We use Mixpanel to collect and analyze usage patterns and improve our Service. We don&apos;t store or capture your personal data like email or name etc for analytics purpose.</li>
-        <li>Device identifiers: We collect device advertising identifiers to deliver personalized features, analyze app performance, and improve user experience. You can reset or limit this identifier through your device settings.</li>
+        <li>Account and purchase data: your account ID, credit balances, plan type, subscription status and purchase history.</li>
+        <li>Usage and analytics data: which features you use and when, app version and basic device information, collected with Firebase Analytics and Mixpanel. We do not send your name or email address to Mixpanel.</li>
+        <li>Crash and diagnostic data: crash reports and error logs from Firebase Crashlytics.</li>
+        <li>Device and security data: device identifiers, push notification tokens, and app integrity checks from Firebase App Check.</li>
+        <li>Server logs: our server records requests made through it, including the IP address, account ID, email address and request content (see section 3.2).</li>
       </ul>
 
-      <h3>2.3 Information from Third-Party Services</h3>
-      <p>We use various third-party APIs to provide our services, including:</p>
+      <h2 className="topic">3. How Your Information Is Processed</h2>
+      <h3>3.1 Where your content goes</h3>
       <ul>
-        <li>OpenAI, Anthropic, Stability, Flux and Google Gemini for AI-powered features</li>
-        <li>Firebase for authentication, data storage, and cloud storage</li>
-      </ul>
-      <p>These services may collect and process your data according to their own privacy policies.</p>
-
-      <h2 className="topic">3. How We Use Your Information</h2>
-      <p>We use the collected information to:</p>
-      <ul>
-        <li>Provide and maintain our Service</li>
-        <li>Improve and personalize your experience</li>
-        <li>Develop new features and services</li>
-        <li>Communicate with you about our Service</li>
-        <li>Ensure the security and proper functioning of our Service</li>
-        <li>Comply with legal obligations</li>
+        <li>Chat history is stored on your device. It is not stored on our servers.</li>
+        <li>To generate a response, your prompt, the recent conversation and any image, document text or voice-to-text you include are sent through our server to the AI provider for the model you choose (see section 5).</li>
+        <li>When you chat with a document, the file is read on your device. Its text is split into sections and sent to OpenAI to create search embeddings and answers. The search index is stored on your device and replaced when you open another document.</li>
+        <li>Voice input is converted to text by your device&apos;s speech recognition service. On Android this is usually provided by Google.</li>
+        <li>Read-aloud uses either your device&apos;s text-to-speech or, if you choose an AI voice, OpenAI&apos;s text-to-speech service.</li>
+        <li>Saved responses, and their images, are stored in Firebase (Cloud Firestore and Cloud Storage) so they are available on your account.</li>
       </ul>
 
-      <h2 className="topic">4. Data Sharing and Disclosure</h2>
-      <p>We may share your information with:</p>
-      <ul>
-        <li>Third-party service providers that help us operate our Service</li>
-        <li>Other users when you choose to share AI-generated content within the app</li>
-        <li>Law enforcement or other authorities if required by applicable law</li>
-      </ul>
-      <p>We do not sell your personal information to third parties.</p>
+      <h3>3.2 Our server</h3>
+      <p>
+        Requests to AI providers go through our server, hosted on Google Cloud. It checks that you are signed in before passing the request on. Its logs include the IP address, account ID, email address and request content. They are used to run the Service, fix problems and prevent abuse, and are kept for up to 30 days.
+      </p>
 
-      <h2 className="topic">5. Data Retention and Deletion</h2>
-      
-      <h3>5.1 How Long We Keep Your Data</h3>
-      <p>We retain different types of data for different periods based on the purpose and requirements:</p>
+      <h3>3.3 Why we use your information</h3>
       <ul>
-        <li>Account Information:
-          <ul>
-            <li>Stored in Firebase Authentication and Firestore while your account is active</li>
-            <li>Deleted immediately upon account deletion request</li>
-            <li>You can request account deletion at any time through the app settings or by contacting us</li>
-          </ul>
-        </li>
-        <li>User-Generated Content:
-          <ul>
-            <li>Stored in Firebase Firestore while your account is active</li>
-            <li>You can manually delete individual content items at any time</li>
-          </ul>
-        </li>
-        <li>Usage Data:
-          <ul>
-            <li>Basic analytics data is retained in Mixpanel as per their retention policy</li>
-            <li>Firebase Analytics data is retained according to Google&apos;s standard retention period (currently 14 months)</li>
-            <li>You can opt-out of analytics collection as described in the Your Rights and Choices section</li>
-          </ul>
-        </li>
+        <li>To provide the Service: generate responses and images, run document chat, keep track of credits and purchases, and sync saved responses.</li>
+        <li>To keep the Service secure and prevent fraud and abuse, including misuse of free credits.</li>
+        <li>To understand how the app is used and to fix crashes and improve features.</li>
+        <li>To send notifications, such as credit and account updates, if you allow notifications.</li>
+        <li>To answer your feedback and support requests and process Share &amp; Earn claims.</li>
+        <li>To meet legal obligations and enforce our Terms.</li>
       </ul>
+      <p>
+        Where the law requires a legal basis, we rely on performance of our contract with you (providing the Service), our legitimate interests (security, fixing problems and improving the app), your consent (for example notifications, which you can turn off at any time in your device settings), and legal obligations.
+      </p>
 
-      <h3>5.2 Account Deletion</h3>
-      <p>When you delete your account:</p>
+      <h2 className="topic">4. Advertising</h2>
+      <p>
+        The current version of the app does not show ads. The app still includes the Google Mobile Ads SDK and the advertising ID permission from a former rewarded-ads feature. You can reset or delete your advertising ID at any time: on Android, go to Settings &gt; Google &gt; Ads; on iOS, go to Settings &gt; Privacy &amp; Security &gt; Tracking.
+      </p>
+
+      <h2 className="topic">5. Who We Share Information With</h2>
+      <p>We share information only with service providers that help us run the Service, as described below:</p>
       <ul>
-        <li>Your account information is immediately and permanently deleted from Firebase Authentication</li>
-        <li>All your personal data in Firestore is automatically deleted</li>
-        <li>This deletion is permanent and cannot be undone</li>
-        <li>Any data you shared publicly within the app may remain visible to other users until you manually delete it</li>
+        <li>AI providers, to generate responses: OpenAI (chat, document embeddings and AI voices), Anthropic (Claude models), Google (Gemini models) and fal.ai (image generation with Flux and Stable Diffusion models). They receive the content needed to answer each request, under their API terms and privacy policies.</li>
+        <li>Google Firebase and Google Cloud: sign-in, database, file storage, analytics, crash reporting, remote configuration, app integrity checks and hosting for our server.</li>
+        <li>Google Sign-In and Sign in with Apple, if you use them to sign in.</li>
+        <li>RevenueCat, Google Play and the Apple App Store: processing and verifying purchases and subscriptions. RevenueCat receives your account ID and purchase history. We do not receive your payment card details.</li>
+        <li>Mixpanel: product analytics.</li>
+        <li>OneSignal: push notifications. OneSignal receives your account ID, a push token and whether you have a premium or lifetime plan.</li>
+        <li>Authorities, if the law requires it, or to protect the rights, safety or property of our users, the public or us.</li>
+        <li>A buyer or successor, if the Service is sold or transferred. We will tell you before your information becomes subject to a different privacy policy.</li>
       </ul>
+      <p>
+        We do not sell your personal information, and we do not share it for cross-context behavioural advertising.
+      </p>
 
-      <h3>5.3 Data Backup and Recovery</h3>
-      <p>For service reliability and security:</p>
-      <ul>
-        <li>Data is stored in Firebase Firestore and Firebase Storage and transmitted over secure connections</li>
-      </ul>
+      <h2 className="topic">6. International Transfers</h2>
+      <p>
+        We are based in India, and our providers process data in other countries, including the United States. Where the law requires it, we rely on safeguards such as the providers&apos; standard contractual clauses for these transfers.
+      </p>
 
-      <h3>5.4 Legal Requirements</h3>
-      <p>We may retain certain data longer if required by law:</p>
+      <h2 className="topic">7. Data Retention and Deletion</h2>
+      <h3>7.1 How long we keep data</h3>
       <ul>
-        <li>To comply with legal obligations</li>
-        <li>To resolve disputes</li>
-        <li>To enforce our agreements</li>
-        <li>To protect against fraudulent or illegal activity</li>
+        <li>Account, profile, credit and purchase records: while your account is active.</li>
+        <li>Saved responses: until you delete them or delete your account.</li>
+        <li>Chat history and document indexes: on your device until you delete them or uninstall the app.</li>
+        <li>Server logs: up to 30 days.</li>
+        <li>Analytics and crash data: according to the providers&apos; retention settings. Firebase Analytics keeps data for up to 14 months.</li>
+        <li>Purchase records we must keep for tax or accounting reasons: as long as the law requires.</li>
       </ul>
 
-      <h2 className="topic">6. Your Rights and Choices</h2>
-      <p>Depending on your location, you may have certain rights regarding your personal information, such as the right to access, correct, or delete your data. Please contact us to exercise these rights.</p>
+      <h3>7.2 Deleting your account</h3>
+      <p>
+        You can delete your account in the app under Settings &gt; Delete Account. You can also email <Email /> from the email address linked to your account, with the subject &ldquo;Intelli Chat AI account deletion&rdquo;, without reinstalling the app. We may ask you to verify that you own the account. Do not send your password.
+      </p>
+      <p>
+        When you delete your account, your sign-in account and profile are deleted immediately. Other data linked to your account, such as saved responses and their images, credit records, and Share &amp; Earn and feedback records, is deleted within 30 days, except data we must keep by law. Deleting your account does not cancel a store subscription; cancel it in Google Play or the App Store.
+      </p>
+      <p>
+        Spaces, a former community feature, is no longer available. If you posted in Spaces and want those posts removed, email us.
+      </p>
 
-      <h3>6.1 Opt-Out Rights</h3>
-      <p>We respect your right to control your data. You have several options to opt-out of data collection and targeted advertising:</p>
-
-      <h4>Targeted Advertising Opt-Out</h4>
+      <h2 className="topic">8. Your Rights and Choices</h2>
+      <p>
+        Depending on where you live, you may have the right to access, correct, delete or get a copy of your personal information, to object to or restrict some processing, to withdraw consent, and to complain to your local data protection authority. This includes rights under the GDPR and UK GDPR, India&apos;s Digital Personal Data Protection Act, and US state laws such as the CCPA and VCDPA. We will not treat you differently for exercising these rights.
+      </p>
       <ul>
-        <li>AdMob (Google) Advertising:
-          <ul>
-            <li>Open your device&apos;s settings</li>
-            <li>For Android: Go to Settings → Google → Ads → Delete advertising ID</li>
-            <li>For iOS: Go to Settings → Privacy → Advertising → Turn off “Personalized Ads“</li>
-            <li>You can also reset your advertising ID at any time through these settings</li>
-          </ul>
-        </li>
+        <li>To make a request, email <Email />. We may need to verify your identity, and we will reply within the time the law requires, usually within 30 days.</li>
+        <li>To opt out of Mixpanel analytics, email us with the subject &ldquo;Analytics Opt-Out&rdquo; from the email address linked to your account.</li>
+        <li>To stop notifications, turn them off for Intelli Chat AI in your device settings.</li>
+        <li>To delete individual saved responses, delete them in the app. To clear chat history, delete the conversations in the app or uninstall it.</li>
       </ul>
 
-      <h4>Analytics Data Collection Opt-Out</h4>
-      <ul>
-        <li>Mixpanel Analytics:
-          <ul>
-            <li>Send an email to syedumairandrabi66@gmail.com with the subject “Analytics Opt-Out“</li>
-            <li>Include your device identifier or email associated with your account</li>
-            <li>We will process your opt-out request within 7 business days</li>
-          </ul>
-        </li>
-      </ul>
+      <h2 className="topic">9. Security</h2>
+      <p>
+        Data is sent over encrypted connections, access to our server requires a signed-in account, and our databases are protected by access rules. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.
+      </p>
 
-      <h4>Profiling and Automated Decision-Making</h4>
-      <p>We do not currently engage in profiling that produces legal or similarly significant effects. However, we do use data to personalize your experience. You can:</p>
-      <ul>
-        <li>Disable personalization features in the app settings</li>
-        <li>Contact us to request limitation of automated processing of your data</li>
-        <li>Opt-out of all non-essential data processing by emailing us</li>
-      </ul>
+      <h2 className="topic">10. Children&apos;s Privacy</h2>
+      <p>
+        The Service is not intended for children under 13, and we do not knowingly collect personal information from them. If you believe a child under 13 has given us personal information, email us and we will delete it.
+      </p>
 
-      <h4>Data Sale Opt-Out</h4>
-      <p>While we do not sell your personal information in the traditional sense, sharing data with third-party services may be considered a “sale“ under certain state laws. You can:</p>
-      <ul>
-      <li>Opt-out of all non-essential data processing by emailing us</li>
-      </ul>
+      <h2 className="topic">11. Changes to This Privacy Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. We will post the new version on this page and change the &ldquo;Last updated&rdquo; date. If the changes are significant, we will also tell you in the app or by email.
+      </p>
 
-      <h3>6.2 California Privacy Rights</h3>
-      <p>If you are a California resident, you have specific rights under the California Consumer Privacy Act (CCPA) regarding your personal information:</p>
-      <ul>
-        <li>Right to Know: You have the right to request information about the personal information we collect, use, disclose, and sell, including:
-          <ul>
-            <li>Categories of personal information we collect</li>
-            <li>Sources from which we collect personal information</li>
-            <li>Our purpose for collecting or sharing personal information</li>
-            <li>Categories of third parties with whom we share personal information</li>
-            <li>Specific pieces of personal information we have collected about you</li>
-          </ul>
-        </li>
-        <li>Right to Delete: You can request deletion of personal information we collected from you, subject to certain exceptions.</li>
-        <li>Right to Opt-Out: You have the right to opt-out of the sale of your personal information. However, we do not currently sell personal information.</li>
-        <li>Right to Non-Discrimination: We will not discriminate against you for exercising any of your CCPA rights.</li>
-      </ul>
-
-      <p>To exercise your rights under CCPA:</p>
-      <ul>
-        <li>Email us at syedumairandrabi66@gmail.com</li>
-        <li>We will respond to verifiable consumer requests within 45 days</li>
-        <li>You may make a request twice within a 12-month period</li>
-      </ul>
-
-      <h3>6.3 Virginia Privacy Rights (VCDPA)</h3>
-      <p>If you are a Virginia resident, you have specific rights under the Virginia Consumer Data Protection Act (VCDPA), including:</p>
-      <ul>
-        <li>Right to access your personal data</li>
-        <li>Right to correct inaccuracies in your personal data</li>
-        <li>Right to delete personal data</li>
-        <li>Right to obtain a copy of your personal data</li>
-        <li>Right to opt out of:
-          <ul>
-            <li>Targeted advertising</li>
-            <li>Sale of personal data</li>
-            <li>Profiling for decisions that produce legal effects</li>
-          </ul>
-        </li>
-      </ul>
-
-      <p>To exercise your VCDPA rights:</p>
-      <ul>
-        <li>Email us at syedumairandrabi66@gmail.com</li>
-        <li>Use the privacy controls in your app settings</li>
-        <li>We will respond to your request within 45 days</li>
-      </ul>
-
-      <p>To protect your privacy and maintain security, we take steps to verify your identity before granting access to personal information or complying with deletion requests.</p>
-
-      <h2 className="topic">7. Children&apos;s Privacy</h2>
-      <p>Our Service is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
-
-      <h2 className="topic">8. Changes to This Privacy Policy</h2>
-      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the “Last updated“ date.</p>
-
-      <h2 className="topic">9. Contact Us and Data Protection Officer</h2>
-      
-      <h3>9.1 General Contact Information</h3>
-      <p>If you have any general questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:syedumairandrabi66@gmail.com">syedumairandrabi66@gmail.com</a>.</p>
-
-      <h3>9.2 Data Protection Officer</h3>
-      <p>For specific concerns about your personal data or to exercise your privacy rights, you can contact our Data Protection Officer (DPO):</p>
-      <ul>
-        <li>Name: Syed Umair Andrabi</li>
-        <li>Email: <a href="mailto:syedumairandrabi66@gmail.com">syedumairandrabi66@gmail.com</a></li>
-        <li>Response Time: Within 48 hours</li>
-      </ul>
-
-      <p>Our DPO is responsible for:</p>
-      <ul>
-        <li>Overseeing data protection strategy and implementation</li>
-        <li>Ensuring compliance with data protection laws</li>
-        <li>Handling data protection questions from users and privacy regulators</li>
-        <li>Managing data protection impact assessments</li>
-        <li>Acting as a point of contact for all privacy-related concerns</li>
-      </ul>
-
-      <p>You can contact our DPO regarding:</p>
-      <ul>
-        <li>Requests to access your personal data</li>
-        <li>Requests to correct or delete your data</li>
-        <li>Questions about how we protect your privacy</li>
-        <li>Concerns about our data handling practices</li>
-        <li>Any other privacy-related matters</li>
-      </ul>
+      <h2 className="topic">12. Contact Us</h2>
+      <p>
+        Data controller: {OPERATOR_NAME}
+        <br />
+        Location: {OPERATOR_LOCATION}
+        <br />
+        Email: <Email />
+        <br />
+        Alternative email: <a href={`mailto:${ALT_CONTACT_EMAIL}`}>{ALT_CONTACT_EMAIL}</a>
+      </p>
+      <p>Contact us at either email address with questions or privacy requests.</p>
     </section>
   );
 }
